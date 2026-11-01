@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050c18;
+    --bg-secondary: #0a172c;
+    --bg-card: rgba(13, 27, 49, 0.85);
+    --border-subtle: rgba(78, 140, 224, 0.18);
+    --accent-blue: #3894ff;
+    --accent-cyan: #4fe0ff;
+    --accent-purple: #9d7dfa;
+  }
+
+  body {
+    background-color: #050c18;
+    color: #eaf2ff;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(8, 18, 34, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(70, 120, 180, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 160, 240, 0.6);
+}
+
+/* Atmospheric glow */
+.cosmic-radial {
+  background: 
+    radial-gradient(ellipse at 10% 0%, rgba(20, 70, 140, 0.35) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 20%, rgba(100, 40, 160, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(10, 45, 90, 0.2) 0%, transparent 50%),
+    #050c18;
+}
+
+/* Custom animations */
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: slow-spin 32s linear infinite;
+}
+
+/* Bookora Story Scene Illustrations */
+.story-scene {
+  margin: 24px auto;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.story-scene img {
+  width: 85%;
+  max-height: 380px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.story-scene figcaption {
+  font-size: 9pt;
+  color: #718096;
+  margin-top: 6px;
+}

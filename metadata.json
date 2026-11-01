@@ -1,0 +1,6 @@
+{
+  "name": "Bookora — Book Creation Studio",
+  "description": "Bookora — Complete AI Book Creation Studio for authoring, illustrating, world building, and publishing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

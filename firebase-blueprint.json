@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "Story": {
+      "title": "Story",
+      "description": "Book or story authored by user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 200 },
+        "genre": { "type": "string", "maxLength": 64 },
+        "tone": { "type": "string", "maxLength": 64 },
+        "length": { "type": "string", "maxLength": 64 },
+        "language": { "type": "string", "maxLength": 10 },
+        "author": { "type": "string", "maxLength": 128 },
+        "content": { "type": "string", "maxLength": 1000000 },
+        "wordCount": { "type": "integer" },
+        "updatedAt": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "imagePrompt": { "type": "string" },
+        "autoIllustrateEnabled": { "type": "boolean" },
+        "illustratedScenes": { "type": "array" },
+        "chapters": { "type": "array" },
+        "characters": { "type": "array" },
+        "worldLore": { "type": "object" },
+        "coverConfig": { "type": "object" },
+        "versionHistory": { "type": "array" },
+        "twists": { "type": "array" }
+      },
+      "required": ["id", "userId", "title", "content"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Author profile information",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 100 },
+        "avatarUrl": { "type": "string" },
+        "isCloudSynced": { "type": "boolean" },
+        "lastSyncTime": { "type": "string" }
+      },
+      "required": ["id", "name", "email"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document"
+    },
+    "/users/{userId}/stories/{storyId}": {
+      "schema": "Story",
+      "description": "User's stories stored securely under user namespace"
+    }
+  }
+}
